@@ -1,12 +1,10 @@
-function SectionHeading({ eyebrow, title, description, align = 'left' }) {
-  const alignment = align === 'center' ? 'section-header section-header--center' : 'section-header';
-
+function SectionHeading({ eyebrow, title, description }) {
   return (
-    <div className={alignment}>
+    <header className="section-header">
       {eyebrow && <p className="section-label">{eyebrow}</p>}
-      <h2 className="section-title">{title}</h2>
+      {title && <h2 className="section-title">{title}</h2>}
       {description && <p className="section-subtitle">{description}</p>}
-    </div>
+    </header>
   );
 }
 

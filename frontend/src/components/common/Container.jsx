@@ -1,5 +1,5 @@
 function Container({ children, className = '' }) {
-  return <div className={`section-shell ${className}`}>{children}</div>;
+  return <div className={`container-shell${className ? ` ${className}` : ''}`}>{children}</div>;
 }
 
 export default Container;
