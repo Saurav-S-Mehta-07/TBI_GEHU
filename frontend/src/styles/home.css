@@ -5,17 +5,15 @@
 .hero-section {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(135deg, #0f0f0f 0%, #111111 50%, #171717 100%),
-    radial-gradient(circle at top, rgba(255, 69, 0, 0.08), transparent 18%);
+  background-color: whitesmoke;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 80% 15%, rgba(255, 69, 0, 0.08), transparent 12%),
-    radial-gradient(circle at 20% 80%, rgba(122, 0, 25, 0.12), transparent 14%);
+    radial-gradient(circle at 80% 15%, #f8d9da, transparent 12%),
+    radial-gradient(circle at 20% 80%, #ffd4d6, transparent 14%);
 }
 
 .hero-container {
@@ -33,7 +31,7 @@
 .hero-content h1 {
   margin-top: 1rem;
   max-width: 42rem;
-  color: #fff;
+  color: #000000;
   font-size: clamp(3rem, 5vw, 4.8rem);
   line-height: 0.95;
 }
@@ -41,7 +39,7 @@
 .hero-description {
   max-width: 40rem;
   margin-top: 1rem;
-  color: #b3b3b3;
+  color: #272727;
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -50,10 +48,10 @@
   display: inline-flex;
   align-items: center;
   padding: 0.45rem 0.9rem;
-  border: 1px solid rgba(255, 69, 0, 0.24);
+  border: 1px solid rgba(255, 65, 65, 0.24);
   border-radius: 999px;
   background: rgba(255, 69, 0, 0.08);
-  color: #ffb199;
+  color: #EC1C24;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -81,9 +79,9 @@
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #ff4500, #ff6a2d);
+  background: linear-gradient(90deg, #EC1C24, #ff3a3a);
   color: #fff;
-  box-shadow: 0 12px 24px rgba(255, 69, 0, 0.22);
+  box-shadow: 0 12px 24px rgba(255, 16, 16, 0.22);
 }
 
 .btn-secondary {
@@ -111,21 +109,19 @@
 .mentor-card,
 .resource-item,
 .cta-card {
-  border: 1px solid #2a2a2a;
-  background: #141414;
+  /* border: 1px solid #2a2a2a; */
+  /* background: #141414; */
   border-radius: 1.5rem;
 }
 
 .hero-card {
   padding: 2rem;
-  background:
-    linear-gradient(180deg, #151515, #111111),
-    radial-gradient(circle at top, rgba(255, 69, 0, 0.08), transparent 18%);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
+  background: linear-gradient(145deg, #7a0019, #ff4500);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
 }
 
 .hero-card-label {
-  color: #ff4500;
+  color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.3em;
@@ -142,11 +138,11 @@
 .hero-stat-card {
   padding: 1rem;
   border-radius: 1rem;
-  background: #0f0f0f;
+  /* background: #0f0f0f; */
 }
 
 .hero-stat-card p {
-  color: #ff4500;
+  color: #fff;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -154,7 +150,7 @@
 .hero-stat-card span {
   display: block;
   margin-top: 0.25rem;
-  color: #b3b3b3;
+  color: #d4d4d4;
   font-size: 0.9rem;
 }
 
@@ -167,17 +163,17 @@
 
 .hero-badges span {
   padding: 0.45rem 0.8rem;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #616161;
   border-radius: 999px;
-  background: #0f0f0f;
-  color: #d9d9d9;
+  background: #000000;
+  color: #e7e7e7;
   font-size: 0.8rem;
 }
 
 .ticker-section {
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
-  background: #111111;
+  background: #fff;
   padding: 1rem 0;
 }
 
@@ -189,19 +185,26 @@
 
 .ticker-row span {
   padding: 0.6rem 0.9rem;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #000000;
   border-radius: 999px;
-  background: #0f0f0f;
-  color: #d9d9d9;
+  background: #ffffff;
+  color: #000000;
   font-size: 0.88rem;
+}
+
+.ticker-row span:hover{
+  background-color: #EC1C24;
+  border-color: #EC1C24;
+  color: white;
 }
 
 .section-block {
   padding: 5rem 0;
+  background-color: #ffffff;
 }
 
 .alt-bg {
-  background: #141414;
+  background: #fff;
 }
 
 .section-head {
@@ -210,7 +213,7 @@
 }
 
 .section-label {
-  color: #ff4500;
+  color: #EC1C24;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.3em;
@@ -219,14 +222,14 @@
 
 .section-title {
   margin-top: 0.75rem;
-  color: #fff;
+  color: #000000;
   font-size: clamp(1.9rem, 3vw, 2.5rem);
   line-height: 1.2;
 }
 
 .section-subtitle {
   margin-top: 0.8rem;
-  color: #b3b3b3;
+  color: #2c2c2c;
   font-size: 0.98rem;
   line-height: 1.75;
 }
@@ -244,6 +247,15 @@
 .program-card {
   padding: 1.75rem;
   transition: transform 0.2s ease;
+  border: 0.5px solid rgb(204, 204, 204);
+}
+
+.service-card:hover{
+  box-shadow: 0px 0px 3px rgba(141, 141, 141, 0.7);
+}
+
+.section-block{
+  border-bottom: 1px solid black;
 }
 
 .service-icon {
@@ -252,10 +264,10 @@
   width: 3rem;
   height: 3rem;
   border-radius: 0.8rem;
-  background: #101010;
-  color: #ff4500;
-  font-size: 0.8rem;
+  background: #e6e6e6;
+  color: #EC1C24;
   font-weight: 700;
+  border: 0.5px solid #9c9c9c;
 }
 
 .service-card h3,
@@ -263,7 +275,7 @@
 .event-card-body h3,
 .mentor-card h3 {
   margin-top: 1rem;
-  color: #fff;
+  color: #000000;
 }
 
 .service-card p,
@@ -272,7 +284,7 @@
 .ecosystem-card p,
 .resource-item span:first-child {
   margin-top: 0.7rem;
-  color: #b3b3b3;
+  color: #1b1b1b;
   line-height: 1.75;
 }
 
@@ -283,8 +295,10 @@
 
 .ecosystem-card {
   padding: 2rem;
-  background: #0f0f0f;
+  background: #fff;
+  border: 1px solid rgb(167, 167, 167);
 }
+
 
 .ecosystem-highlight {
   padding: 2rem;
@@ -322,6 +336,18 @@
   font-weight: 700;
 }
 
+.program-card{
+  background-color: #fff !important;
+}
+
+.program-card p,h3{
+  color: #000000 !important;
+}
+
+.program-card span{
+  color: #EC1C24 !important;
+}
+
 .event-card {
   overflow: hidden;
 }
@@ -331,6 +357,7 @@
   background: linear-gradient(90deg, #7a0019, #ff4500);
 }
 
+
 .event-card-header p {
   color: #fff;
   font-size: 2rem;
@@ -338,12 +365,18 @@
 }
 
 .event-card-body {
+  background-color: whitesmoke;
   padding: 1.5rem;
 }
 
 .mentor-card {
   padding: 1.5rem;
   text-align: center;
+  background-color: #fff !important;
+}
+
+.mentor-card h3{
+  color: #000000 !important;
 }
 
 .mentor-avatar {
@@ -364,10 +397,16 @@
   justify-content: space-between;
   padding: 1rem 1.2rem;
   transition: transform 0.2s ease;
+  background-color: whitesmoke !important;
+  border: 0.5px solid rgb(194, 194, 194) !important;
+}
+
+.resource-item span{
+  color: #000000 !important;
 }
 
 .resource-item span:last-child {
-  color: #ff4500;
+  color: #EC1C24 !important;
   font-size: 0.9rem;
   font-weight: 700;
 }
