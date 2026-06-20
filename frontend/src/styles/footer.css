@@ -1,6 +1,6 @@
 .site-footer {
-  border-top: 1px solid rgba(42, 42, 42, 0.9);
-  background-color: #fff;
+  border-top: 1px solid rgba(159, 159, 159, 0.9);
+  background-color: whitesmoke;
 }
 
 .footer-main {
@@ -79,7 +79,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(42, 42, 42, 0.9);
+  border-top: 1px solid rgba(159, 159, 159, 0.9);
 }
 
 .footer-bottom-inner {
@@ -87,7 +87,7 @@
   flex-direction: column;
   gap: 0.8rem;
   padding: 1rem 0;
-  color: #313131;
+  color: #757575;
   font-size: 0.9rem;
 }
 
