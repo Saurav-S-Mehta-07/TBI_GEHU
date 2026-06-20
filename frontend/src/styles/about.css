@@ -1,6 +1,6 @@
 .about-page {
   width: 100%;
-  background: #0a0a0a;
+  background:whitesmoke;
 }
 
 .about-section {
@@ -15,9 +15,9 @@
 
 .about-card,
 .about-mission-card {
-  border: 1px solid #2a2a2a;
+  border: 1px solid #787878;
   border-radius: 1.5rem;
-  background: #141414;
+  background: rgb(241, 241, 241);
 }
 
 .about-card {
@@ -25,7 +25,7 @@
 }
 
 .about-card p {
-  color: #b3b3b3;
+  color: #484848;
   line-height: 1.8;
 }
 

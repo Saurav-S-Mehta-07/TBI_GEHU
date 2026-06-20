@@ -1,6 +1,6 @@
 .startups-page {
   width: 100%;
-  background: #0a0a0a;
+  background: whitesmoke;
 }
 
 .startups-section {
@@ -17,7 +17,7 @@
   padding: 1.5rem;
   border: 1px solid #2a2a2a;
   border-radius: 1.5rem;
-  background: #141414;
+  background: whitesmoke;
 }
 
 .startup-logo {
@@ -34,13 +34,13 @@
 
 .startup-card h3 {
   margin-top: 1rem;
-  color: #fff;
+  color: #000000;
   font-size: 1.2rem;
 }
 
 .startup-card p {
   margin-top: 0.4rem;
-  color: #b3b3b3;
+  color: #111111;
 }
 
 @media (min-width: 768px) {
