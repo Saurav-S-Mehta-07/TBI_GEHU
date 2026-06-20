@@ -158,13 +158,11 @@ function Home() {
 
       <section className="ticker-section">
         <Container>
-          <marquee behavior="smooth" direction="left">
           <div className="ticker-row">
             {startupHighlights.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </div>
-          </marquee>
         </Container>
       </section>
 
