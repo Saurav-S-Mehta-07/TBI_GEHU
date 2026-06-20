@@ -15,15 +15,21 @@
 
 .program-card {
   padding: 1.5rem;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #e2e2e2;
   border-radius: 1.5rem;
-  background: #141414;
+  background:whitesmoke;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .program-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 69, 0, 0.5);
+  border: none;
+  box-shadow: 0 0 30px 10px #b3b3b3;
+}
+
+.program-img{
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
 }
 
 .program-card__tag {
@@ -40,13 +46,13 @@
 
 .program-card h3 {
   margin-top: 1rem;
-  color: #fff;
-  font-size: 1.6rem;
+  color: #030303;
+  font-size: 1.2rem;
 }
 
 .program-card p {
   margin-top: 0.75rem;
-  color: #b3b3b3;
+  color: #5e5e5e !important;
   line-height: 1.7;
 }
 

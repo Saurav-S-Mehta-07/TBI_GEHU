@@ -15,39 +15,42 @@
 
 .mentor-card {
   padding: 1.5rem;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #aaaaaa;
   border-radius: 1.5rem;
-  background: #141414;
+  background:whitesmoke;
   text-align: center;
+  height: 18rem;
+}
+
+.mentor-card:hover{
+  box-shadow: 0px 0px 50px #5c5c5c;
+  border: none;
 }
 
 .mentor-avatar {
   display: grid;
-  place-items: center;
-  width: 4rem;
+  width: 100%;
   height: 4rem;
   margin: 0 auto;
   border-radius: 1rem;
-  background: linear-gradient(135deg, #7a0019, #ff4500);
-  color: #fff;
-  font-weight: 700;
+  margin-bottom: 6rem;
 }
 
 .mentor-card h3 {
   margin-top: 1rem;
-  color: #fff;
+  color: black;
   font-size: 1.15rem;
 }
 
 .mentor-role {
   margin-top: 0.3rem;
-  color: #ff4500;
+  color: #EC1C24;
   font-size: 0.9rem;
 }
 
 .mentor-org {
   margin-top: 0.25rem;
-  color: #b3b3b3;
+  color: #5c5c5c;
   font-size: 0.95rem;
 }
 

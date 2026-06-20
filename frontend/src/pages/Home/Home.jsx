@@ -1,4 +1,6 @@
 import Container from '../../components/common/Container';
+import Reveal from "../../components/common/Reveal";
+
 import '../../styles/home.css';
 
 const stats = [
@@ -111,6 +113,9 @@ function Home() {
       <section className="hero-section">
         <div className="hero-overlay" />
         <Container className="hero-container">
+
+        <Reveal delay={100}>
+
           <div className="hero-grid">
             <div className="hero-content">
               <p className="hero-eyebrow">Technology Business Incubator · GEHU</p>
@@ -141,6 +146,7 @@ function Home() {
               </div>
             </div>
           </div>
+          </Reveal>
         </Container>
       </section>
 

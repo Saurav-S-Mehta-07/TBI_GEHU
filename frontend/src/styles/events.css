@@ -15,9 +15,13 @@
 
 .event-card {
   overflow: hidden;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #8b8b8b;
   border-radius: 1.5rem;
   background: whitesmoke;
+}
+
+.event-card:hover{
+  box-shadow: 0 0 20px #8b8b8b;
 }
 
 .event-card__header {
@@ -41,7 +45,7 @@
 }
 
 .event-card__body p {
-  color: #b3b3b3;
+  color: #616161;
 }
 
 @media (min-width: 768px) {

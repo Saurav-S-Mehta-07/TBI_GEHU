@@ -1,6 +1,10 @@
 import Container from '../../components/common/Container';
 import SectionHeading from '../../components/common/SectionHeading';
 import '../../styles/programs.css';
+import Reveal from "../../components/common/Reveal";
+import { images } from '../../assets';
+
+
 
 const programs = [
   {
@@ -42,11 +46,16 @@ function Programs() {
           title="A path for every stage"
           description="Choose the right support track for your idea, product, and growth stage."
         />
+        <Reveal delay={150}>
 
         <div className="programs-grid">
           {programs.map((program) => (
             <article key={program.title} className="program-card">
+              
               <span className="program-card__tag">{program.tag}</span>
+              <div className='program-img'>
+                <img src={images.image3} alt="" />
+              </div>
               <h3>{program.title}</h3>
               <p>{program.description}</p>
               <div className="program-card__footer">
@@ -56,6 +65,8 @@ function Programs() {
             </article>
           ))}
         </div>
+
+        </Reveal>
       </Container>
     </section>
   );

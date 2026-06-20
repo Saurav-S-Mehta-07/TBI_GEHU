@@ -1,6 +1,10 @@
 import Container from '../../components/common/Container';
+import Reveal from '../../components/common/Reveal';
 import SectionHeading from '../../components/common/SectionHeading';
 import '../../styles/events.css';
+import { images } from '../../assets';
+
+
 
 const events = [
   {
@@ -30,6 +34,8 @@ function Events() {
           description="Explore the events that support learning, networking, and startup growth."
         />
 
+        <Reveal delay={100}>
+
         <div className="events-grid">
           {events.map((event) => (
             <article key={event.title} className="event-card">
@@ -40,9 +46,14 @@ function Events() {
               <div className="event-card__body">
                 <p>{event.type}</p>
               </div>
+              <div>
+                <img src={images.image1} alt="" />
+              </div>
             </article>
           ))}
         </div>
+</Reveal>
+
       </Container>
     </section>
   );

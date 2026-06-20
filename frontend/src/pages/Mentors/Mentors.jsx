@@ -1,6 +1,8 @@
 import Container from '../../components/common/Container';
 import SectionHeading from '../../components/common/SectionHeading';
 import '../../styles/mentors.css';
+import Reveal from "../../components/common/Reveal";
+import { images } from '../../assets';
 
 const mentors = [
   {
@@ -26,6 +28,12 @@ const mentors = [
     name: 'Sneha Reddy',
     role: 'CTO',
     org: 'AgriSense'
+  },
+  {
+    initials: 'SR',
+    name: 'Sneha Reddy',
+    role: 'CTO',
+    org: 'AgriSense'
   }
 ];
 
@@ -38,17 +46,27 @@ function Mentors() {
           title="Advisors who have built and scaled"
           description="Learn from leaders across venture capital, product, and entrepreneurship."
         />
-
+    
+        <Reveal delay={100}>
+    
         <div className="mentors-grid">
+
           {mentors.map((mentor) => (
             <article key={mentor.name} className="mentor-card">
-              <div className="mentor-avatar">{mentor.initials}</div>
+              <div className="mentor-avatar">
+                <img src={images.mentor1} alt="" />
+              </div>
               <h3>{mentor.name}</h3>
               <p className="mentor-role">{mentor.role}</p>
               <p className="mentor-org">{mentor.org}</p>
             </article>
           ))}
+
         </div>
+
+        </Reveal>
+
+
       </Container>
     </section>
   );
