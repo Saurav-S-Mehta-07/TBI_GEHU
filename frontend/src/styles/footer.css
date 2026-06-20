@@ -1,6 +1,6 @@
 .site-footer {
   border-top: 1px solid rgba(159, 159, 159, 0.9);
-  background-color: whitesmoke;
+  background-color: black;
 }
 
 .footer-main {
@@ -13,7 +13,7 @@
 }
 
 .footer-brand p:first-child {
-  color: #111111;
+  color: #EC1C24;
   font-size: 1.8rem;
   font-weight: 700;
 }
@@ -21,7 +21,7 @@
 .footer-brand-text {
   max-width: 28rem;
   margin-top: 0.9rem;
-  color: #424242;
+  color: #bbbbbb;
   font-size: 0.95rem;
   line-height: 1.8;
 }
@@ -39,8 +39,8 @@
   height: 2.9rem;
   border: 1px solid #2a2a2a;
   border-radius: 0.95rem;
-  color: #303030;
-  background: #fafafa;
+  color: #ffffff;
+  background: #292929;
   font-size: 0.88rem;
   font-weight: 700;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -70,7 +70,7 @@
 .footer-link-list a,
 .footer-contact-list li,
 .footer-program-list li {
-  color: #292929;
+  color: #c9c9c9;
   font-size: 0.95rem;
 }
 
@@ -105,5 +105,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer{
+    padding: 2rem;
   }
 }

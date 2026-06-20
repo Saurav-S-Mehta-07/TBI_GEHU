@@ -28,11 +28,11 @@
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 3rem;
+  width: 6rem;
   height: 3rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   background-color: #EC1C24;
-  color: #0a0a0a;
+  color: #000000;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;

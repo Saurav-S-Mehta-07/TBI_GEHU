@@ -1,5 +1,7 @@
 import Container from '../../components/common/Container';
 import Reveal from "../../components/common/Reveal";
+import { images } from '../../assets';
+
 
 import '../../styles/home.css';
 
@@ -72,7 +74,11 @@ const startupHighlights = [
   'CarbonZero',
   'SkillBridge',
   'SupplyLens',
-  'DroneKart'
+  'DroneKart',
+  'DroneKart',
+  'DroneKart',
+  'DroneKart',
+
 ];
 
 const events = [
@@ -152,11 +158,13 @@ function Home() {
 
       <section className="ticker-section">
         <Container>
+          <marquee behavior="smooth" direction="left">
           <div className="ticker-row">
             {startupHighlights.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </div>
+          </marquee>
         </Container>
       </section>
 
@@ -173,6 +181,9 @@ function Home() {
             {services.map((service) => (
               <article key={service.title} className="service-card">
                 <div className="service-icon">{service.icon}</div>
+                <div className='home-about-img'>
+                  <img src={images.image2} alt="" />
+                </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </article>
@@ -218,6 +229,9 @@ function Home() {
             {programs.map((program) => (
               <article key={program.title} className="program-card">
                 <p className="program-tag">{program.tag}</p>
+                <div className='home-program-img'>
+                  <img src={images.image3} alt="" />
+                </div>
                 <h3>{program.title}</h3>
                 <p>{program.text}</p>
                 <div className="program-footer">
@@ -245,6 +259,9 @@ function Home() {
                 <div className="event-card-header">
                   <p>{event.date}</p>
                 </div>
+                <div className='home-events-img'>
+                  <img src={images.image1} alt="" />
+                </div>
                 <div className="event-card-body">
                   <h3>{event.title}</h3>
                   <p>{event.type}</p>
@@ -267,7 +284,9 @@ function Home() {
           <div className="mentors-grid">
             {mentors.map((mentor) => (
               <article key={mentor.name} className="mentor-card">
-                <div className="mentor-avatar">{mentor.initials}</div>
+                <div className='home-mentors-img'>
+                  <img src={images.mentor2} alt="" />
+                </div>
                 <h3>{mentor.name}</h3>
               </article>
             ))}
