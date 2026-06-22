@@ -14,7 +14,6 @@
 }
 
 .startup-card {
-  padding: 1rem;
   border: 1px solid #919191;
   border-radius: 1.5rem;
   background: whitesmoke;
@@ -30,24 +29,30 @@
   display: grid;
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  font-size: 1.1rem;
-  font-weight: 700;
   margin-bottom: 2rem;
+}
+
+.startup-logo img{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
 }
 
 .startup-card h3 {
   color: #000000;
   font-size: 1.2rem;
+  padding: 0 1rem;
 }
 
 .startup-card p {
   margin-top: 0.4rem;
-  color: #111111 !important;
+  color: #2c2c2c !important;
+  padding: 0 1rem;
 }
 
 .startup-card span{
   color: #000000;
+  padding: 0 1rem;
 }
 
 @media (min-width: 768px) {

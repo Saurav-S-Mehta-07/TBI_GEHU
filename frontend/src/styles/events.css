@@ -48,6 +48,17 @@
   color: #616161;
 }
 
+.event-img{
+  width: 100%;
+  padding: 1rem;
+}
+
+.event-img img{
+  border-radius: 1rem;
+  width: 100%;
+}
+
+
 @media (min-width: 768px) {
   .events-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

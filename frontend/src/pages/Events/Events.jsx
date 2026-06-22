@@ -44,15 +44,7 @@ function Events() {
               >
                 <div className="event-card__header">
                   <p>
-                    {event.date
-                      ? new Date(event.date).toLocaleDateString(
-                          "en-GB",
-                          {
-                            day: "2-digit",
-                            month: "short",
-                          }
-                        )
-                      : ""}
+                    {event.date? event.date: "upcoming soon"}
                   </p>
 
                   <h3>{event.title}</h3>
@@ -74,7 +66,7 @@ function Events() {
                   )}
                 </div>
 
-                <div>
+                <div className="event-img">
                   <img
                     src={
                       event.image?.trim()

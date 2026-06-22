@@ -293,18 +293,25 @@
 }
 
 .home-mentors-img img{
-  border-radius: 20px;
-  margin : 1rem 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
+
+
 
 .home-program-img img{
   border-radius: 20px;
   margin : 1rem 0;
+  width: 100%;
+  height: auto;
+}
+
+.home-events-img{
+  width: 100%;
 }
 
 .home-events-img img{
-  border-radius: 20px;
-  margin : 1rem 0;
+  width: 100%;
 }
 
 .ecosystem-grid {
@@ -336,12 +343,13 @@
 }
 
 .program-tag {
-  color: #ff4500;
+  color: #ff4500 !important;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
+
 
 .program-footer {
   display: flex;
@@ -360,12 +368,13 @@
 }
 
 .program-card p,h3{
-  color: #000000 !important;
+  color: #2c2c2c !important;
 }
 
 .program-card span{
   color: #EC1C24 !important;
 }
+
 
 .event-card {
   overflow: hidden;
@@ -389,13 +398,21 @@
 }
 
 .mentor-card {
-  padding: 1.5rem;
   text-align: center;
   background-color: whitesmoke !important;
 }
 
+.mentor-card img{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+}
+
 .mentor-card h3{
   color: #000000 !important;
+}
+.mentor-card p{
+  color: #444444;
 }
 
 .mentor-avatar {
@@ -406,8 +423,6 @@
   margin: 0 auto;
   border-radius: 1rem;
   background: linear-gradient(135deg, #7a0019, #ff4500);
-  color: #fff;
-  font-weight: 700;
 }
 
 .resource-item {

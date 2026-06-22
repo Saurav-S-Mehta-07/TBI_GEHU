@@ -14,6 +14,7 @@ const stats = [
   { value: "95%", label: "Survival Rate" },
 ];
 
+
 const services = [
   {
     icon: "01",
@@ -167,7 +168,7 @@ function Home() {
           <div className="ticker-row">
             {startups.map((startup) => (
               <span key={startup._id}>
-                {startup.startupName}
+                {startup.name}
               </span>
             ))}
           </div>
@@ -291,7 +292,7 @@ function Home() {
                 key={program._id}
                 className="program-card"
               >
-                <p className="program-tag">
+                <p className="program-tag program-p-tag">
                   {program.category}
                 </p>
 
@@ -347,17 +348,7 @@ function Home() {
               >
                 <div className="event-card-header">
                   <p>
-                    {event.date
-                      ? new Date(
-                          event.date
-                        ).toLocaleDateString(
-                          "en-GB",
-                          {
-                            day: "2-digit",
-                            month: "short",
-                          }
-                        )
-                      : ""}
+                    {event.date? event.date : "Upcoming soon"}
                   </p>
                 </div>
 
