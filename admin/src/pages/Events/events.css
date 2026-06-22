@@ -1,0 +1,94 @@
+.events-container {
+  padding: 20px;
+  background: #0b0b0b;
+  min-height: 100vh;
+  color: white;
+}
+
+/* FORM */
+.event-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.event-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.event-form input:focus {
+  border-color: #ff3b3b;
+  box-shadow: 0 0 8px rgba(255, 59, 59, 0.3);
+}
+
+.event-form button {
+  grid-column: span 3;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff0000, #6b0000);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.event-form button:hover {
+  transform: translateY(-2px);
+}
+
+/* LIST */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15);
+}
+
+.event-card h3 {
+  color: #ff3b3b;
+  margin-bottom: 5px;
+}
+
+.event-card p {
+  color: #ccc;
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+/* DELETE BUTTON */
+.event-card button {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #ff3b3b;
+  color: #ff3b3b;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.event-card button:hover {
+  background: #ff3b3b;
+  color: white;
+}
