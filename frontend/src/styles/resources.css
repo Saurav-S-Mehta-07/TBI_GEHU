@@ -1,6 +1,6 @@
 .resources-page {
   width: 100%;
-  background: #0a0a0a;
+  background: #000000;
 }
 
 .resources-section {
@@ -18,19 +18,225 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.2rem;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #2A2A2A;
   border-radius: 1rem;
-  background: #141414;
+  background: #0A0A0A;
+  transition: all 0.2s ease-in-out;
+}
+
+.resource-item:hover {
+  border-color: #EC1C24;
+  background: #111111;
 }
 
 .resource-item span:first-child {
-  color: #fff;
+  color: #FFFFFF;
 }
 
 .resource-item span:last-child {
-  color: #ff4500;
+  color: #EC1C24;
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.section-title-line {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.section-title-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #2A2A2A;
+}
+
+.library-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.library-feature-card {
+  background: #0A0A0A;
+  border: 1px solid #2A2A2A;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.library-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #EC1C24;
+  box-shadow: 0 10px 20px rgba(236, 28, 36, 0.1);
+}
+
+.feature-card-icon {
+  width: 40px;
+  height: 40px;
+  background: #EC1C24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.library-feature-card:hover .feature-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.library-feature-card h3 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.library-feature-card p {
+  color: #9CA3AF;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.feature-card-btn {
+  background: #EC1C24;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  transition: background 0.2rem ease, transform 0.2s ease;
+}
+
+.feature-card-btn:hover {
+  background: #d1131a;
+  transform: scale(1.03);
+}
+
+.founders-library-container {
+  margin-top: 5rem;
+}
+
+.library-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #2A2A2A;
+  padding-bottom: 1rem;
+}
+
+.library-header-row h2 {
+  color: #FFFFFF;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.library-search-box input {
+  background: #0A0A0A;
+  border: 1px solid #2A2A2A;
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  outline: none;
+  width: 260px;
+  transition: border-color 0.2s ease;
+}
+
+.library-search-box input:focus {
+  border-color: #EC1C24;
+}
+
+.library-list-wrapper {
+  border: 1px solid #2A2A2A;
+  border-radius: 0.75rem;
+  background: #0A0A0A;
+  overflow: hidden;
+}
+
+.library-list-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr 0.5fr;
+  padding: 1rem;
+  background: #111111;
+  border-bottom: 1px solid #2A2A2A;
+  font-size: 0.8rem;
+  color: #9CA3AF;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.library-list-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr 0.5fr;
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #2A2A2A;
+  align-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.library-list-row:last-child {
+  border-bottom: none;
+}
+
+.library-list-row:hover {
+  background: #111111;
+}
+
+.doc-name-col {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+}
+
+.red-doc-icon {
+  color: #EC1C24;
+  font-size: 1.1rem;
+}
+
+.doc-desc-col p {
+  color: #9CA3AF;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.row-download-btn {
+  background: #EC1C24;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.row-download-btn:hover {
+  background: #d1131a;
+  transform: translateY(-1px);
+}
+
+.text-right {
+  text-align: right;
 }
 
 @media (min-width: 768px) {
