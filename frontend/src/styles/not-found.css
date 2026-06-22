@@ -3,7 +3,7 @@
   align-items: center;
   min-height: 70vh;
   padding: 6rem 0;
-  background: #0a0a0a;
+  background: whitesmoke;
 }
 
 .not-found-card {
@@ -22,20 +22,20 @@
 
 .not-found-card h1 {
   margin-top: 1rem;
-  color: #fff;
+  color: black;
   font-size: clamp(3rem, 5vw, 4rem);
 }
 
 .not-found-card p {
   margin-top: 1rem;
-  color: #b3b3b3;
+  color: #363636;
 }
 
 .not-found-link {
   display: inline-flex;
   margin-top: 2rem;
   border-radius: 9999px;
-  background: #7a0019;
+  background: #EC1C24;
   color: #fff;
   padding: 0.85rem 1.4rem;
   font-size: 0.95rem;
