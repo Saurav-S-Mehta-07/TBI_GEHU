@@ -19,8 +19,9 @@ const eventSchema = new mongoose.Schema(
     },
 
     date: {
-      type: Date,
+      type: String,
       required: true,
+      trim: true,
     },
 
     venue: {
@@ -36,6 +37,7 @@ const eventSchema = new mongoose.Schema(
     image: {
       type: String,
       default: "",
+      trim: true,
     },
 
     registrationLink: {

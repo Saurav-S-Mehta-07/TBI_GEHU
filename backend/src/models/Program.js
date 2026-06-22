@@ -8,6 +8,12 @@ const programSchema = new mongoose.Schema(
       trim: true,
     },
 
+    tag: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
     category: {
       type: String,
       required: true,
@@ -32,6 +38,7 @@ const programSchema = new mongoose.Schema(
     image: {
       type: String,
       default: "",
+      trim: true,
     },
 
     applicationLink: {

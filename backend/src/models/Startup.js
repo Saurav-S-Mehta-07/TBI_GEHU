@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const startupSchema = new mongoose.Schema(
   {
-    startupName: {
+    name: {
       type: String,
       required: true,
       trim: true,
@@ -10,7 +10,7 @@ const startupSchema = new mongoose.Schema(
 
     founder: {
       type: String,
-      required: true,
+      default: "",
       trim: true,
     },
 
@@ -25,12 +25,13 @@ const startupSchema = new mongoose.Schema(
       default: "",
     },
 
-    website: {
+    image: {
       type: String,
       default: "",
+      trim: true,
     },
 
-    logo: {
+    website: {
       type: String,
       default: "",
     },
@@ -48,6 +49,7 @@ const startupSchema = new mongoose.Schema(
 
     foundedYear: {
       type: Number,
+      default: null,
     },
   },
   {
