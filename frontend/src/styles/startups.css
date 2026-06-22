@@ -43,7 +43,11 @@
 
 .startup-card p {
   margin-top: 0.4rem;
-  color: #111111;
+  color: #111111 !important;
+}
+
+.startup-card span{
+  color: #000000;
 }
 
 @media (min-width: 768px) {

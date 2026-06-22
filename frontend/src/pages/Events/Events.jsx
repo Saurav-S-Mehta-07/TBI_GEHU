@@ -66,11 +66,11 @@ function Events() {
                   )}
 
                   {event.venue && (
-                    <p>📍 {event.venue}</p>
+                    <p>Venue : {event.venue}</p>
                   )}
 
                   {event.speaker && (
-                    <p>🎤 {event.speaker}</p>
+                    <p>Speaker : {event.speaker}</p>
                   )}
                 </div>
 

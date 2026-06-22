@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -14,9 +13,7 @@ function Startups() {
   useEffect(() => {
     const fetchStartups = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:5000/api/startups"
-        );
+        const { data } = await axios.get("http://localhost:5000/api/startups");
 
         setStartups(data.startups || []);
       } catch (error) {
@@ -39,22 +36,15 @@ function Startups() {
         <Reveal delay={100}>
           <div className="startups-grid">
             {startups.map((startup) => (
-              <article
-                key={startup._id}
-                className="startup-card"
-              >
+              <article key={startup._id} className="startup-card">
                 <div className="startup-logo">
                   <img
-                    src={
-                      startup.logo?.trim()
-                        ? startup.logo
-                        : images.image1
-                    }
-                    alt={startup.startupName}
+                    src={startup.image?.trim() ? startup.image : images.image1}
+                    alt={startup.name}
                   />
                 </div>
 
-                <h3>{startup.startupName}</h3>
+                <h3>{startup.name}</h3>
 
                 <p>{startup.sector}</p>
 
@@ -73,4 +63,3 @@ function Startups() {
 }
 
 export default Startups;
-
