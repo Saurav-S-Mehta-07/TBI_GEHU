@@ -28,12 +28,6 @@ const mentors = [
     name: 'Sneha Reddy',
     role: 'CTO',
     org: 'AgriSense'
-  },
-  {
-    initials: 'SR',
-    name: 'Sneha Reddy',
-    role: 'CTO',
-    org: 'AgriSense'
   }
 ];
 

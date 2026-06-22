@@ -22,10 +22,6 @@ const startups = [
   {
     name: 'SkillBridge',
     sector: 'EdTech'
-  },
-  {
-    name: 'SkillBridge',
-    sector: 'EdTech'
   }
 ];
 
