@@ -1,3 +1,4 @@
+
 import "./dashboard.css";
 import { useState } from "react";
 
@@ -14,10 +15,33 @@ function Dashboard() {
       <div className="sidebar">
         <h2 className="logo">TBI GEHU</h2>
 
-        <button onClick={() => setActiveTab("mentors")}>Mentors</button>
-        <button onClick={() => setActiveTab("programs")}>Programs</button>
-        <button onClick={() => setActiveTab("events")}>Events</button>
-        <button onClick={() => setActiveTab("startups")}>Startups</button>
+        <button
+          className={activeTab === "mentors" ? "active" : ""}
+          onClick={() => setActiveTab("mentors")}
+        >
+          Mentors
+        </button>
+
+        <button
+          className={activeTab === "programs" ? "active" : ""}
+          onClick={() => setActiveTab("programs")}
+        >
+          Programs
+        </button>
+
+        <button
+          className={activeTab === "events" ? "active" : ""}
+          onClick={() => setActiveTab("events")}
+        >
+          Events
+        </button>
+
+        <button
+          className={activeTab === "startups" ? "active" : ""}
+          onClick={() => setActiveTab("startups")}
+        >
+          Startups
+        </button>
 
         <button
           className="logout"
@@ -32,7 +56,12 @@ function Dashboard() {
 
       <div className="main-content">
         <header className="topbar">
-          <h3>Admin Dashboard</h3>
+          <h3>
+            {activeTab === "mentors" && "Mentors Management"}
+            {activeTab === "programs" && "Programs Management"}
+            {activeTab === "events" && "Events Management"}
+            {activeTab === "startups" && "Startups Management"}
+          </h3>
         </header>
 
         <div className="content-area">

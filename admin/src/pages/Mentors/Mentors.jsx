@@ -4,22 +4,24 @@ import "./mentors.css";
 
 function Mentors() {
   const [mentors, setMentors] = useState([]);
+  const [editId, setEditId] = useState(null);
+
   const [form, setForm] = useState({
     name: "",
     designation: "",
     organization: "",
     bio: "",
-    image: ""
+    image: "",
   });
 
   const token = localStorage.getItem("token");
 
-  // Fetch mentors
   const fetchMentors = async () => {
     try {
       const { data } = await axios.get(
         "http://localhost:5000/api/mentors"
       );
+
       setMentors(data.mentors);
     } catch (err) {
       console.log(err);
@@ -30,12 +32,25 @@ function Mentors() {
     fetchMentors();
   }, []);
 
-  // Handle input
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // Add mentor
+  const resetForm = () => {
+    setForm({
+      name: "",
+      designation: "",
+      organization: "",
+      bio: "",
+      image: "",
+    });
+
+    setEditId(null);
+  };
+
   const addMentor = async (e) => {
     e.preventDefault();
 
@@ -45,34 +60,53 @@ function Mentors() {
         form,
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
-      setForm({
-        name: "",
-        designation: "",
-        organization: "",
-        bio: "",
-        image: ""
-      });
-
+      resetForm();
       fetchMentors();
     } catch (err) {
       console.log(err);
     }
   };
 
-  // Delete mentor
+  const updateMentor = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.put(
+        `http://localhost:5000/api/mentors/${editId}`,
+        form,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      resetForm();
+      fetchMentors();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const deleteMentor = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this mentor?"
+    );
+
+    if (!confirmDelete) return;
+
     try {
       await axios.delete(
         `http://localhost:5000/api/mentors/${id}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -82,26 +116,49 @@ function Mentors() {
     }
   };
 
+  const handleEdit = (mentor) => {
+    setEditId(mentor._id);
+
+    setForm({
+      name: mentor.name || "",
+      designation: mentor.designation || "",
+      organization: mentor.organization || "",
+      bio: mentor.bio || "",
+      image: mentor.image || "",
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="mentors-container">
-
-      {/* Form */}
-      <form onSubmit={addMentor} className="mentor-form">
+      <form
+        onSubmit={editId ? updateMentor : addMentor}
+        className="mentor-form"
+      >
         <input
+          type="text"
           name="name"
           placeholder="Name"
           value={form.name}
           onChange={handleChange}
+          required
         />
 
         <input
+          type="text"
           name="designation"
           placeholder="Designation"
           value={form.designation}
           onChange={handleChange}
+          required
         />
 
         <input
+          type="text"
           name="organization"
           placeholder="Organization"
           value={form.organization}
@@ -109,6 +166,7 @@ function Mentors() {
         />
 
         <input
+          type="text"
           name="bio"
           placeholder="Bio"
           value={form.bio}
@@ -116,26 +174,66 @@ function Mentors() {
         />
 
         <input
+          type="text"
           name="image"
           placeholder="Image URL"
           value={form.image}
           onChange={handleChange}
         />
 
-        <button type="submit">Add Mentor</button>
+        <button type="submit">
+          {editId ? "Update Mentor" : "Add Mentor"}
+        </button>
+
+        {editId && (
+          <button
+            type="button"
+            onClick={resetForm}
+          >
+            Cancel
+          </button>
+        )}
       </form>
 
-      {/* List */}
       <div className="mentor-list">
-        {mentors.map((m) => (
-          <div key={m._id} className="mentor-card">
-            <h3>{m.name}</h3>
-            <p>{m.designation}</p>
-            <p>{m.organization}</p>
+        {mentors.map((mentor) => (
+          <div
+            key={mentor._id}
+            className="mentor-card"
+          >
+            {mentor.image && (
+              <img
+                src={mentor.image}
+                alt={mentor.name}
+                className="mentor-image"
+              />
+            )}
 
-            <button onClick={() => deleteMentor(m._id)}>
-              Delete
-            </button>
+            <h3>{mentor.name}</h3>
+
+            <p>{mentor.designation}</p>
+
+            <p>{mentor.organization}</p>
+
+            <p>{mentor.bio}</p>
+
+            <div className="mentor-actions">
+              <button
+                className="edit-btn"
+                onClick={() => handleEdit(mentor)}
+              >
+                Edit
+              </button>
+
+              <button
+                className="delete-btn"
+                onClick={() =>
+                  deleteMentor(mentor._id)
+                }
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>

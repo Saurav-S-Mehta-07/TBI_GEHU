@@ -4,21 +4,27 @@ import "./events.css";
 
 function Events() {
   const [events, setEvents] = useState([]);
+  const [editId, setEditId] = useState(null);
 
   const [form, setForm] = useState({
     title: "",
+    description: "",
+    type: "",
     date: "",
-    type: ""
+    venue: "",
+    speaker: "",
+    image: "",
+    registrationLink: "",
   });
 
   const token = localStorage.getItem("token");
 
-  // Fetch events
   const fetchEvents = async () => {
     try {
       const { data } = await axios.get(
         "http://localhost:5000/api/events"
       );
+
       setEvents(data.events);
     } catch (err) {
       console.log(err);
@@ -29,12 +35,28 @@ function Events() {
     fetchEvents();
   }, []);
 
-  // Handle input
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // Add event
+  const resetForm = () => {
+    setForm({
+      title: "",
+      description: "",
+      type: "",
+      date: "",
+      venue: "",
+      speaker: "",
+      image: "",
+      registrationLink: "",
+    });
+
+    setEditId(null);
+  };
+
   const addEvent = async (e) => {
     e.preventDefault();
 
@@ -44,32 +66,53 @@ function Events() {
         form,
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
-      setForm({
-        title: "",
-        date: "",
-        type: ""
-      });
-
+      resetForm();
       fetchEvents();
     } catch (err) {
       console.log(err);
     }
   };
 
-  // Delete event
+  const updateEvent = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.put(
+        `http://localhost:5000/api/events/${editId}`,
+        form,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      resetForm();
+      fetchEvents();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const deleteEvent = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this event?"
+    );
+
+    if (!confirmDelete) return;
+
     try {
       await axios.delete(
         `http://localhost:5000/api/events/${id}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -79,49 +122,163 @@ function Events() {
     }
   };
 
+  const handleEdit = (event) => {
+    setEditId(event._id);
+
+    setForm({
+      title: event.title || "",
+      description: event.description || "",
+      type: event.type || "",
+      date: event.date || "",
+      venue: event.venue || "",
+      speaker: event.speaker || "",
+      image: event.image || "",
+      registrationLink: event.registrationLink || "",
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="events-container">
-
-      {/* FORM */}
-      <form onSubmit={addEvent} className="event-form">
-
+      <form
+        onSubmit={editId ? updateEvent : addEvent}
+        className="event-form"
+      >
         <input
+          type="text"
           name="title"
           placeholder="Title"
           value={form.title}
           onChange={handleChange}
+          required
         />
 
         <input
-          name="date"
-          placeholder="Date (e.g. 28 Jun)"
-          value={form.date}
+          type="text"
+          name="description"
+          placeholder="Description"
+          value={form.description}
           onChange={handleChange}
         />
 
         <input
+          type="text"
           name="type"
           placeholder="Type"
           value={form.type}
           onChange={handleChange}
         />
 
-        <button type="submit">Add Event</button>
+        <input
+          type="text"
+          name="date"
+          placeholder="Date"
+          value={form.date}
+          onChange={handleChange}
+          required
+        />
+
+        <input
+          type="text"
+          name="venue"
+          placeholder="Venue"
+          value={form.venue}
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
+          name="speaker"
+          placeholder="Speaker"
+          value={form.speaker}
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
+          name="image"
+          placeholder="Image URL"
+          value={form.image}
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
+          name="registrationLink"
+          placeholder="Registration Link"
+          value={form.registrationLink}
+          onChange={handleChange}
+        />
+
+        <button type="submit">
+          {editId ? "Update Event" : "Add Event"}
+        </button>
+
+        {editId && (
+          <button
+            type="button"
+            onClick={resetForm}
+          >
+            Cancel
+          </button>
+        )}
       </form>
 
-      {/* LIST */}
       <div className="event-list">
-        {events.map((e) => (
-          <div key={e._id} className="event-card">
+        {events.map((event) => (
+          <div
+            key={event._id}
+            className="event-card"
+          >
+            {event.image && (
+              <img
+                src={event.image}
+                alt={event.title}
+                className="event-image"
+              />
+            )}
 
-            <h3>{e.title}</h3>
-            <p>{e.date}</p>
-            <p>{e.type}</p>
+            <h3>{event.title}</h3>
 
-            <button onClick={() => deleteEvent(e._id)}>
-              Delete
-            </button>
+            <p>{event.description}</p>
 
+            <p>{event.type}</p>
+
+            <p>{event.date}</p>
+
+            <p>{event.venue}</p>
+
+            <p>{event.speaker}</p>
+
+            <a
+              href={event.registrationLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Registration Link
+            </a>
+
+            <div className="event-actions">
+              <button
+                className="edit-btn"
+                onClick={() => handleEdit(event)}
+              >
+                Edit
+              </button>
+
+              <button
+                className="delete-btn"
+                onClick={() =>
+                  deleteEvent(event._id)
+                }
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>
