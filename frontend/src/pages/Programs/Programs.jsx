@@ -1,43 +1,32 @@
-import Container from '../../components/common/Container';
-import SectionHeading from '../../components/common/SectionHeading';
-import '../../styles/programs.css';
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+import Container from "../../components/common/Container";
+import SectionHeading from "../../components/common/SectionHeading";
+import "../../styles/programs.css";
 import Reveal from "../../components/common/Reveal";
-import { images } from '../../assets';
-
-
-
-const programs = [
-  {
-    title: 'Spark Bootcamp',
-    tag: 'Ideation',
-    duration: '4 Weeks',
-    description:
-      'A fast-track launchpad for turning early-stage ideas into validated MVPs.'
-  },
-  {
-    title: 'LaunchPad',
-    tag: 'Pre-Incubation',
-    duration: '3 Months',
-    description:
-      'Hands-on workshops for product thinking, customer discovery, and business model clarity.'
-  },
-  {
-    title: 'TechNest Core',
-    tag: 'Incubation',
-    duration: '12 Months',
-    description:
-      'Full-spectrum incubation with mentorship, infrastructure, and investor access.'
-  },
-  {
-    title: 'Founder Fellowship',
-    tag: 'Fellowship',
-    duration: '6 Months',
-    description:
-      'A dedicated path for founders who want to build full-time with guided support.'
-  }
-];
+import { images } from "../../assets";
 
 function Programs() {
+  const [programs, setPrograms] = useState([]);
+
+  useEffect(() => {
+    const fetchPrograms = async () => {
+      try {
+        const { data } = await axios.get(
+          "http://localhost:5000/api/programs"
+        );
+
+        setPrograms(data.programs || []);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchPrograms();
+  }, []);
+
   return (
     <section className="programs-page programs-section">
       <Container>
@@ -46,26 +35,56 @@ function Programs() {
           title="A path for every stage"
           description="Choose the right support track for your idea, product, and growth stage."
         />
+
         <Reveal delay={150}>
+          <div className="programs-grid">
+            {programs.map((program) => (
+              <article
+                key={program._id}
+                className="program-card"
+              >
+                <span className="program-card__tag">
+                  {program.category}
+                </span>
 
-        <div className="programs-grid">
-          {programs.map((program) => (
-            <article key={program.title} className="program-card">
-              
-              <span className="program-card__tag">{program.tag}</span>
-              <div className='program-img'>
-                <img src={images.image3} alt="" />
-              </div>
-              <h3>{program.title}</h3>
-              <p>{program.description}</p>
-              <div className="program-card__footer">
-                <span className="program-card__duration">{program.duration}</span>
-                <span className="program-card__link">Apply →</span>
-              </div>
-            </article>
-          ))}
-        </div>
+                <div className="program-img">
+                  <img
+                    src={
+                      program.image?.trim()
+                        ? program.image
+                        : images.image3
+                    }
+                    alt={program.title}
+                  />
+                </div>
 
+                <h3>{program.title}</h3>
+
+                <p>{program.description}</p>
+
+                <div className="program-card__footer">
+                  <span className="program-card__duration">
+                    {program.duration}
+                  </span>
+
+                  {program.applicationLink ? (
+                    <a
+                      href={program.applicationLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="program-card__link"
+                    >
+                      Apply →
+                    </a>
+                  ) : (
+                    <span className="program-card__link">
+                      Apply →
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
         </Reveal>
       </Container>
     </section>

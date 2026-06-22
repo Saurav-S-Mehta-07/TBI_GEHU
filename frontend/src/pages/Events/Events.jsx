@@ -1,30 +1,31 @@
-import Container from '../../components/common/Container';
-import Reveal from '../../components/common/Reveal';
-import SectionHeading from '../../components/common/SectionHeading';
-import '../../styles/events.css';
-import { images } from '../../assets';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-
-
-const events = [
-  {
-    date: '28 Jun',
-    title: 'Demo Day',
-    type: 'Investor Showcase'
-  },
-  {
-    date: '05 Jul',
-    title: 'Pitch Workshop',
-    type: 'Founder Session'
-  },
-  {
-    date: '12 Jul',
-    title: 'Hackathon',
-    type: '48-Hour Challenge'
-  }
-];
+import Container from "../../components/common/Container";
+import Reveal from "../../components/common/Reveal";
+import SectionHeading from "../../components/common/SectionHeading";
+import "../../styles/events.css";
+import { images } from "../../assets";
 
 function Events() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const { data } = await axios.get(
+          "http://localhost:5000/api/events"
+        );
+
+        setEvents(data.events || []);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <section className="events-page events-section">
       <Container>
@@ -35,25 +36,58 @@ function Events() {
         />
 
         <Reveal delay={100}>
+          <div className="events-grid">
+            {events.map((event) => (
+              <article
+                key={event._id}
+                className="event-card"
+              >
+                <div className="event-card__header">
+                  <p>
+                    {event.date
+                      ? new Date(event.date).toLocaleDateString(
+                          "en-GB",
+                          {
+                            day: "2-digit",
+                            month: "short",
+                          }
+                        )
+                      : ""}
+                  </p>
 
-        <div className="events-grid">
-          {events.map((event) => (
-            <article key={event.title} className="event-card">
-              <div className="event-card__header">
-                <p>{event.date}</p>
-                <h3>{event.title}</h3>
-              </div>
-              <div className="event-card__body">
-                <p>{event.type}</p>
-              </div>
-              <div>
-                <img src={images.image1} alt="" />
-              </div>
-            </article>
-          ))}
-        </div>
-</Reveal>
+                  <h3>{event.title}</h3>
+                </div>
 
+                <div className="event-card__body">
+                  <p>{event.type}</p>
+
+                  {event.description && (
+                    <p>{event.description}</p>
+                  )}
+
+                  {event.venue && (
+                    <p>📍 {event.venue}</p>
+                  )}
+
+                  {event.speaker && (
+                    <p>🎤 {event.speaker}</p>
+                  )}
+                </div>
+
+                <div>
+                  <img
+                    src={
+                      event.image?.trim()
+                        ? event.image
+                        : images.image1
+                    }
+                    alt={event.title}
+                  />
+                </div>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );
