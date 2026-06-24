@@ -1,0 +1,64 @@
+.mentors-page {
+  width: 100%;
+  background: #0a0a0a;
+}
+
+.mentors-section {
+  padding: 5rem 0;
+}
+
+.mentors-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.mentor-card {
+  padding: 1.5rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 1.5rem;
+  background: #141414;
+  text-align: center;
+}
+
+.mentor-avatar {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #7a0019, #ff4500);
+  color: #fff;
+  font-weight: 700;
+}
+
+.mentor-card h3 {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.mentor-role {
+  margin-top: 0.3rem;
+  color: #ff4500;
+  font-size: 0.9rem;
+}
+
+.mentor-org {
+  margin-top: 0.25rem;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .mentors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .mentors-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
