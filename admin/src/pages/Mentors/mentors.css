@@ -86,9 +86,14 @@
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
+  margin-right: 1rem;
 }
 
 .mentor-card button:hover {
   background: #ff3b3b;
   color: white;
+}
+
+.mentor-image{
+  width: 100%;
 }
