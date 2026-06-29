@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./about.css";
+import "../../styles/about.css";
 
 const stats = [
   { num: "50+", label: "Startups Incubated" },
