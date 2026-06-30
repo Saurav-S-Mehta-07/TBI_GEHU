@@ -1,9 +1,8 @@
-
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #0b0b0b;
-  color: white;
+  background: #f5f7fa;
+  color: #333;
 }
 
 * {
@@ -21,7 +20,7 @@ body {
 .sidebar {
   width: 240px;
   background: linear-gradient(180deg, #120000, #000000);
-  border-right: 1px solid rgba(255, 0, 0, 0.2);
+  border-right: 1px solid rgba(255,0,0,.2);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -40,7 +39,7 @@ body {
 .sidebar button {
   background: transparent;
   border: none;
-  color: #ccc;
+  color: #444;
   padding: 14px;
   text-align: left;
   font-size: 15px;
@@ -51,16 +50,17 @@ body {
 }
 
 .sidebar button:hover {
-  background: rgba(255, 59, 59, 0.15);
-  color: #ff3b3b;
+  background: #ffe5e5;
+  color: #d32f2f;
   transform: translateX(5px);
 }
 
 /* Active Menu */
 .sidebar button.active {
-  background: rgba(255, 59, 59, 0.2);
-  color: #ff3b3b;
-  border-left: 4px solid #ff3b3b;
+  background: #ffe5e5;
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+
   font-weight: 600;
   transform: translateX(5px);
   box-shadow: 0 0 10px rgba(255, 59, 59, 0.2);
@@ -87,14 +87,14 @@ body {
 
 /* Topbar */
 .topbar {
-  background: #111111;
-  border-bottom: 1px solid rgba(255, 0, 0, 0.15);
+  background: white;
+  border-bottom: 1px solid #ddd;
   padding: 18px 25px;
 }
 
 .topbar h3 {
   margin: 0;
-  color: #ffffff;
+  color: #222;
   font-size: 20px;
   font-weight: 600;
 }
@@ -104,6 +104,7 @@ body {
   flex: 1;
   padding: 25px;
   overflow-y: auto;
+  background: #f8f9fa;
 }
 
 /* Scrollbar */
@@ -112,7 +113,7 @@ body {
 }
 
 .content-area::-webkit-scrollbar-track {
-  background: #111;
+  background: #eee;
 }
 
 .content-area::-webkit-scrollbar-thumb {
