@@ -4,28 +4,45 @@ body {
 }
 
 /* Background */
+
 .login-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #ff2b06 0%, #e60000 100%);
+
+  background: linear-gradient(
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.10)
+    ),
+    url("IMAGES/gehu-haldwani1.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;   /* Move login box to the right */
   align-items: center;
-  padding: 20px;
+
+  padding: 20px 80px;
 }
 
 /* Login Card */
 .login-box {
   width: 100%;
-  max-width: 460px;
-  background: #ffffff;
-  padding: 55px 45px;
-  border-radius: 18px;
+  max-width: 360px;   /* Slimmer */
+
+  padding: 40px 30px;
+
+  background: rgba(255, 255, 255, 0.12); /* Nearly transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
   text-align: center;
-
-  /* Simple shadow only */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-
-  animation: fadeIn .5s ease;
 }
 
 /* Remove glow */
@@ -34,34 +51,34 @@ body {
 }
 
 /* Heading */
-.login-box h2 {
-  margin: 0;
-  font-size: 30px;
-  font-weight: 700;
-  color: #d80000;
+.login-box h2{
+    color:#EC1C24;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
 .login-box p {
-  margin: 12px 0 35px;
-  color: #666;
-  font-size: 15px;
+    color: white;
 }
 
 /* Inputs */
 .login-box input {
   width: 100%;
   box-sizing: border-box;
-  padding: 17px 20px;
-  margin-bottom: 22px;
 
-  border: 1px solid #e5e5e5;
-  border-radius: 15px;
+  padding: 15px 18px;
+  margin-bottom: 18px;
 
-  background: #ffffff;
-  color: #333;
-  font-size: 17px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
 
-  transition: .3s;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+
+  font-size: 16px;
+
+  transition: all .3s ease;
 }
 
 .login-box input::placeholder {
@@ -70,26 +87,30 @@ body {
 
 .login-box input:focus {
   outline: none;
-  border-color: #ff2b06;
+  border-color: #EC1C24 ;
   box-shadow: none;
 }
 
 /* Login Button */
 .login-box button {
-  width: 100%;
-  padding: 18px;
+    width: 100%;
+    padding: 15px;
 
-  border: none;
-  border-radius: 15px;
+    border: none;
+    border-radius: 12px;
 
-  background: linear-gradient(90deg, #ff1f1f, #d30000);
+    background: #EC1C24;
 
-  color: white;
-  font-size: 17px;
-  font-weight: 600;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
 
-  cursor: pointer;
-  transition: .25s;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-box button:hover {
+    background: #c9171d;
 }
 
 .login-box button:hover:not(:disabled) {
@@ -151,6 +172,47 @@ body {
   .login-box p {
     font-size: 14px;
     margin-bottom: 28px;
+  }
+
+  .login-box input,
+  .login-box button {
+    padding: 15px;
+    font-size: 15px;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  .login-container {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .login-box {
+    max-width: 400px;
+    padding: 45px 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .login-container {
+    justify-content: center;
+    padding: 18px;
+    background-position: center;
+  }
+
+  .login-box {
+    width: 100%;
+    padding: 35px 22px;
+    border-radius: 16px;
+  }
+
+  .login-box h2 {
+    font-size: 24px;
+  }
+
+  .login-box p {
+    font-size: 14px;
   }
 
   .login-box input,

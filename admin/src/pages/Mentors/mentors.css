@@ -48,9 +48,10 @@
 }
 
 .mentor-form input:focus {
-  border-color: #ff3b3b;
+  border-color: #EC1C24;
+  box-shadow: 0 0 0 4px rgba(236, 28, 36, 0.15);
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(255,59,59,.12);
+
 }
 
 /* BUTTONS */
@@ -59,7 +60,7 @@
 
   height: 55px;
 
-  background: linear-gradient(135deg, #ff2020, #b30000);
+  background: #EC1C24;
   color: white;
 
   border: none;
@@ -74,7 +75,8 @@
 
 .mentor-form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(255, 0, 0, 0.35);
+  background: #d71920;
+  box-shadow: 0 12px 25px rgba(236, 28, 36, 0.25);
 }
 
 .mentor-form button:active {
@@ -107,13 +109,13 @@
   left: 0;
   width: 100%;
   height: 5px;              /* Thickness of the line */
-  background: linear-gradient(90deg, #ff3b3b, #d60000);
+  background: #EC1C24;
   z-index: 2;
 }
 
 .mentor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(236, 28, 36, 0.15);
 }
 .mentor-image {
   width: 100%;
@@ -158,22 +160,22 @@
 }
 
 .edit-btn {
-  background: #ff3b3b;
+  background: #EC1C24;
   color: white;
 }
 
 .edit-btn:hover {
-  background: #d62828;
+  background: #d71920;
 }
 
 .delete-btn {
   background: white;
-  border: 1px solid #ff3b3b;
-  color: #ff3b3b;
+  border: 1px solid #EC1C24;
+  color: #EC1C24;
 }
 
 .delete-btn:hover {
-  background: #ff3b3b;
+  background: #EC1C24;
   color: white;
 }
 
