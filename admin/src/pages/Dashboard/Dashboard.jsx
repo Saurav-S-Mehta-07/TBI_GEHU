@@ -13,7 +13,14 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="sidebar">
-        <h2 className="logo">TBI GEHU</h2>
+        <div className="logo">
+        <img
+          src="/logo.png"
+          alt="TBI GEHU Logo"
+          className="logo-image"
+          />
+          <span>TBI GEHU</span>
+        </div>
 
         <button
           className={activeTab === "mentors" ? "active" : ""}
