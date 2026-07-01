@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 30px;
   background: #f5f7fb;
-  color: #111827;
+  color: #333;
 }
 
 /* ==========================
@@ -15,32 +15,30 @@
 
 .program-form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
 
-  background: #ffffff;
-  padding: 28px;
   margin-bottom: 35px;
 
-  border-radius: 20px;
-  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
 
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .program-form input {
-  height: 52px;
+  height: 50px;
   padding: 0 16px;
 
+  background: #fff;
+  color: #333;
+
   border: 1px solid #d1d5db;
-  border-radius: 12px;
+  border-radius: 10px;
 
-  background: #fafafa;
-  color: #111827;
-
-  font-size: 15px;
   outline: none;
-
   transition: .3s;
 }
 
@@ -48,54 +46,51 @@
   color: #9ca3af;
 }
 
-.program-form input:hover {
-  border-color: #9ca3af;
-}
-
 .program-form input:focus {
-  background: white;
   border-color: #ff3b3b;
-  box-shadow: 0 0 0 4px rgba(255,59,59,.12);
+  box-shadow: 0 0 0 4px rgba(255, 59, 59, .12);
 }
 
 /* ==========================
-   BUTTON
+   APPLY NOW BUTTON
 ========================== */
 
-.program-form button {
-  grid-column: 1 / -1;
+.program-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  height: 54px;
+  margin: 18px;
+  padding: 14px 24px;
 
-  border: none;
+  background: #ff3b3b;
+  color: #fff;
+
   border-radius: 14px;
+  text-decoration: none;
 
-  background: linear-gradient(135deg, #ff0000, #6b0000);
-
-  color: white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
 
-  cursor: pointer;
-  transition: .3s;
+  transition: all 0.3s ease;
 }
 
-.program-form button:hover {
+.program-card a:hover {
+  background: #e60000;
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(255,0,0,.25);
+  box-shadow: 0 8px 20px rgba(255, 59, 59, 0.25);
 }
 
-.program-form button:active {
-  transform: scale(.98);
+.program-card a:active {
+  transform: scale(0.97);
 }
-
 /* ==========================
    LIST
 ========================== */
 
 .program-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
@@ -106,77 +101,50 @@
 .program-card {
   position: relative;
 
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  background: #fff;
 
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
   overflow: hidden;
 
   transition: .35s;
 
-  box-shadow:
-    0 6px 16px rgba(0,0,0,.06),
-    0 2px 8px rgba(0,0,0,.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
 }
+
+/* Top red line */
 
 .program-card::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
 
   width: 100%;
-  height: 4px;
+  height: 5px;
 
-  background: linear-gradient(90deg,#ff3b3b,#b30000);
+  background: linear-gradient(90deg, #ff3b3b, #d60000);
 }
 
 .program-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 
-  border-color: rgba(255,59,59,.35);
+  border-color: #ff3b3b;
 
   box-shadow:
-    0 18px 35px rgba(0,0,0,.12),
-    0 8px 18px rgba(255,0,0,.08);
-}
-.program-card a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 15px 18px 0;
-  padding: 10px 18px;
-
-  background: #ff3b3b;
-  color: white;
-
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: .3s;
+    0 12px 30px rgba(0, 0, 0, .12),
+    0 0 18px rgba(255, 0, 0, .10);
 }
 
-.program-card a:hover {
-  background: #d62828;
-  transform: translateY(-2px);
-}
 /* ==========================
    IMAGE
 ========================== */
 
 .program-image {
   width: 100%;
-  height: 210px;
+  height: 220px;
   object-fit: cover;
   display: block;
-
-  transition: transform .45s ease;
-}
-
-.program-card:hover .program-image {
-  transform: scale(1.05);
 }
 
 /* ==========================
@@ -184,17 +152,20 @@
 ========================== */
 
 .program-card h3 {
-  margin: 18px 18px 10px;
-  color: #ff3b3b;
-  font-size: 1.3rem;
-  font-weight: 700;
+  margin: 18px 18px 8px;
+  color: #222;
+  font-size: 1.35rem;
 }
 
 .program-card p {
-  margin: 8px 18px;
-  color: #6b7280;
+  margin: 6px 18px;
+  color: #555;
   line-height: 1.6;
   font-size: 15px;
+}
+
+.program-card p:last-of-type {
+  margin-bottom: 18px;
 }
 
 /* ==========================
@@ -202,26 +173,24 @@
 ========================== */
 
 .program-card button {
-  margin: 18px;
+  margin: 0 18px 18px;
   width: calc(100% - 36px);
-  height: 44px;
+  height: 42px;
 
-  border-radius: 10px;
+  background: transparent;
   border: 1px solid #ff3b3b;
+  border-radius: 10px;
 
-  background: white;
   color: #ff3b3b;
-
   font-weight: 600;
-  cursor: pointer;
 
+  cursor: pointer;
   transition: .3s;
 }
 
 .program-card button:hover {
   background: #ff3b3b;
-  color: white;
-  transform: translateY(-2px);
+  color: #fff;
 }
 
 /* ==========================
@@ -230,19 +199,13 @@
 
 @media (max-width: 992px) {
 
-  .programs-container {
-    padding: 20px;
-  }
-
   .program-form {
     grid-template-columns: repeat(2, 1fr);
-    padding: 22px;
   }
 
   .program-list {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 /* ==========================
@@ -250,6 +213,10 @@
 ========================== */
 
 @media (max-width: 768px) {
+
+  .programs-container {
+    padding: 20px;
+  }
 
   .program-form {
     grid-template-columns: 1fr;
@@ -263,7 +230,6 @@
   .program-image {
     height: 220px;
   }
-
 }
 
 /* ==========================
@@ -278,25 +244,10 @@
 
   .program-form {
     padding: 16px;
-    border-radius: 16px;
-  }
-
-  .program-form input {
-    height: 48px;
-    font-size: 14px;
-  }
-
-  .program-form button {
-    height: 50px;
-    font-size: 15px;
-  }
-
-  .program-card {
-    border-radius: 16px;
   }
 
   .program-card h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .program-card p {
@@ -306,5 +257,4 @@
   .program-image {
     height: 180px;
   }
-
 }
