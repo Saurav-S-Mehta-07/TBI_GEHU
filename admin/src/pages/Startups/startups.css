@@ -1,6 +1,4 @@
-/* ==========================
-   PAGE
-========================== */
+/* PAGE*/
 
 .startups-container {
   min-height: 100vh;
@@ -9,9 +7,7 @@
   color: #111827;
 }
 
-/* ==========================
-   FORM
-========================== */
+/* FORM */
 
 .startup-form {
   display: grid;
@@ -58,9 +54,7 @@
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
 }
 
-/* ==========================
-   BUTTON
-========================== */
+/* BUTTON*/
 
 .startup-form button {
   grid-column: 1 / -1;
@@ -89,9 +83,7 @@
   transform: scale(.98);
 }
 
-/* ==========================
-   LIST
-========================== */
+/* LIST */
 
 .startup-list {
   display: grid;
@@ -99,9 +91,7 @@
   gap: 24px;
 }
 
-/* ==========================
-   CARD
-========================== */
+/* CARD*/
 
 .startup-card {
   position: relative;
@@ -161,9 +151,7 @@
 
   z-index: 1;
 }
-/* ==========================
-   IMAGE
-========================== */
+/* IMAGE*/
 
 .startup-image {
   width: 100%;
@@ -177,9 +165,7 @@
 .startup-card:hover .startup-image {
   transform: scale(1.05);
 }
-/* ==========================
-   CONTENT
-========================== */
+/* CONTENT*/
 
 .startup-card h3 {
   margin: 18px 18px 10px;
@@ -195,9 +181,7 @@
   line-height: 1.5;
 }
 
-/* ==========================
-   ACTION BUTTONS
-========================== */
+/* ACTION BUTTONS */
 
 .startup-actions {
   display: flex;
@@ -237,9 +221,7 @@
   color: white;
 }
 
-/* ==========================
-   TABLET
-========================== */
+/* TABLET*/
 
 @media (max-width: 992px) {
 
@@ -257,9 +239,7 @@
 
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/* MOBILE*/
 
 @media (max-width: 768px) {
 
@@ -286,9 +266,7 @@
 
 }
 
-/* ==========================
-   SMALL MOBILE
-========================== */
+/* SMALL MOBILE*/
 
 @media (max-width: 480px) {
 

@@ -1,6 +1,4 @@
-/* ==========================
-   PAGE
-========================== */
+/* PAGE*/
 
 .programs-container {
   min-height: 100vh;
@@ -9,9 +7,7 @@
   color: #333;
 }
 
-/* ==========================
-   FORM
-========================== */
+/*  FORM*/
 
 .program-form {
   display: grid;
@@ -51,9 +47,7 @@
   box-shadow: 0 0 0 4px rgba(255, 59, 59, .12);
 }
 
-/* ==========================
-   APPLY NOW BUTTON
-========================== */
+/*  APPLY NOW BUTTON */
 
 .program-card a {
   display: inline-flex;
@@ -84,9 +78,7 @@
 .program-card a:active {
   transform: scale(0.97);
 }
-/* ==========================
-   LIST
-========================== */
+/*LIST */
 
 .program-list {
   display: grid;
@@ -94,9 +86,7 @@
   gap: 25px;
 }
 
-/* ==========================
-   CARD
-========================== */
+/*  CARD*/
 
 .program-card {
   position: relative;
@@ -136,9 +126,7 @@
     0 0 18px rgba(255, 0, 0, .10);
 }
 
-/* ==========================
-   IMAGE
-========================== */
+/* IMAGE*/
 
 .program-image {
   width: 100%;
@@ -147,9 +135,7 @@
   display: block;
 }
 
-/* ==========================
-   CONTENT
-========================== */
+/* CONTENT*/
 
 .program-card h3 {
   margin: 18px 18px 8px;
@@ -168,9 +154,7 @@
   margin-bottom: 18px;
 }
 
-/* ==========================
-   DELETE BUTTON
-========================== */
+/* DELETE BUTTON */
 
 .program-card button {
   margin: 0 18px 18px;
@@ -193,9 +177,7 @@
   color: #fff;
 }
 
-/* ==========================
-   TABLET
-========================== */
+/*  TABLET*/
 
 @media (max-width: 992px) {
 
@@ -208,9 +190,7 @@
   }
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -232,9 +212,7 @@
   }
 }
 
-/* ==========================
-   SMALL MOBILE
-========================== */
+/* SMALL MOBILE */
 
 @media (max-width: 480px) {
 

@@ -151,9 +151,7 @@
 
   transition: .3s;
 }
- /* ==========================
-   REGISTRATION BUTTON
-========================== */
+ /* REGISTRATION BUTTON */
 
 .event-card a {
   display: inline-flex;

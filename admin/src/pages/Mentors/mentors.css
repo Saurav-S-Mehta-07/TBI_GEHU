@@ -1,6 +1,4 @@
-/* ==========================
-   PAGE
-========================== */
+/* PAGE */
 
 .mentors-container {
   min-height: 100vh;
@@ -9,9 +7,7 @@
   color: #333;
 }
 
-/* ==========================
-   FORM
-========================== */
+/* FORM*/
 .mentor-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -57,12 +53,7 @@
   box-shadow: 0 0 0 4px rgba(255,59,59,.12);
 }
 
-
-
-/* ==========================
-   BUTTONS
-========================== */
-
+/* BUTTONS */
 .mentor-form button {
   grid-column: 1 / -1;
 
@@ -90,9 +81,7 @@
   transform: scale(.98);
 }
 
-/* ==========================
-   LIST
-========================== */
+/*  LIST */
 
 .mentor-list {
   display: grid;
@@ -100,9 +89,7 @@
   gap: 25px;
 }
 
-/* ==========================
-   CARD
-========================== */
+/* CARD*/
 
 .mentor-card {
   position: relative;
@@ -135,9 +122,7 @@
   display: block;
 }
 
-/* ==========================
-   CARD CONTENT
-========================== */
+/*  CARD CONTENT*/
 
 .mentor-card h3 {
   margin: 18px 18px 8px;
@@ -152,9 +137,7 @@
   line-height: 1.5;
 }
 
-/* ==========================
-   ACTION BUTTONS
-========================== */
+/*ACTION BUTTONS*/
 
 .mentor-actions {
   display: flex;
@@ -194,9 +177,7 @@
   color: white;
 }
 
-/* ==========================
-   TABLET
-========================== */
+/*  TABLET*/
 
 @media (max-width: 992px) {
 
@@ -213,9 +194,7 @@
   }
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/*  MOBILE */
 
 @media (max-width: 768px) {
 
@@ -241,9 +220,7 @@
   }
 }
 
-/* ==========================
-   SMALL MOBILE
-========================== */
+/*SMALL MOBILE*/
 
 @media (max-width: 480px) {
 
