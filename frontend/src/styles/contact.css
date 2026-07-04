@@ -79,6 +79,26 @@
   font-weight: 700;
 }
 
+.contact-form-status {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-form-success {
+  background: #e6f7e9;
+  color: #1a7a34;
+  border: 1px solid #1a7a34;
+}
+
+.contact-form-error {
+  background: #fdeaea;
+  color: #c81e1e;
+  border: 1px solid #c81e1e;
+}
+
 @media (min-width: 1024px) {
   .contact-grid {
     grid-template-columns: 0.9fr 1.1fr;

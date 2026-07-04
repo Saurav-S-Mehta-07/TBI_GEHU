@@ -6,6 +6,7 @@ import mentorRoutes from "./routes/mentorRoutes.js";
 import programRoutes from "./routes/programRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import startupRoutes from "./routes/startupRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 import {
   notFound,
@@ -30,6 +31,7 @@ app.use("/api/mentors", mentorRoutes);
 app.use("/api/programs", programRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/startups", startupRoutes);
+app.use("/api/contact", contactRoutes);
 
 // Error Handling
 app.use(notFound);
