@@ -32,8 +32,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to right, rgba(255,255,255,0.82), rgba(255,255,255,0.72)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80&auto=format&fit=crop');
+  background-image: linear-gradient(to right, rgba(255,255,255,0.88), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80&auto=format&fit=crop');
   background-size: cover;
+  filter: brightness(0.85) saturate(1.1);
   background-position: center;
   z-index: 0;
 }
@@ -41,7 +42,7 @@
 .about-eyebrow { display: inline-flex; align-items: center; background: #fff0f0; border: 1px solid rgba(236,28,36,0.2); color: var(--red); border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.25rem; }
 .about-hero-text h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; color: var(--black); }
 .about-highlight { color: var(--red); }
-.about-hero-desc { color: var(--gray-600); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; }
+.about-hero-desc { color: var(--gray-800); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 480px; text-shadow: 0 1px 12px rgba(255,255,255,0.6); }
 .about-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .about-hero-card { background: var(--white); border: 1px solid var(--gray-200); box-shadow: var(--card-shadow); border-radius: 16px; padding: 2rem; }
 .about-hero-card-title { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--black); }
