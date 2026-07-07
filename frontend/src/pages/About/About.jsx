@@ -50,37 +50,32 @@ const team = [
 
 const facilities = [
   {
-    icon: "🖥️",
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80",
     name: "Co-Working Space",
     desc: "Dedicated workspace with high-speed Wi-Fi and access for incubated teams."
   },
   {
-    icon: "🔬",
     img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80",
     name: "Prototyping Lab",
     desc: "3D printers, electronics workbenches, and hardware dev boards free for all teams."
   },
   {
-    icon: "🎙️",
     img: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=400&q=80",
     name: "Meeting Rooms",
     desc: "AV-equipped rooms with projectors and video-conferencing for investor calls."
   },
   {
-    icon: "☁️",
     img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80",
     name: "Cloud Credits",
     desc: "AWS and Google for Startups credits available for incubated startup teams."
   },
   {
-    icon: "⚖️",
+    
     img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80",
     name: "Legal Cell",
     desc: "Pro-bono support for incorporation, DPIIT registration, and patent filing."
   },
   {
-    icon: "📚",
     img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&q=80",
     name: "Research Library",
     desc: "Access to research databases to validate your technology and market size."
@@ -222,6 +217,14 @@ export default function About() {
                 <div className="timeline-year">2024</div>
                 <h4>₹2Cr+ Funding Raised</h4>
                 <p>Portfolio startups collectively raised over ₹2 Crore through angel investors and government grants.</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-year">2026</div>
+                <h4>Expanding Horizons</h4>
+                <p>Strengthened industry partnerships and scaled mentorship programs, taking TBI GEHU's startup ecosystem to new heights.</p>
               </div>
             </div>
           </div>

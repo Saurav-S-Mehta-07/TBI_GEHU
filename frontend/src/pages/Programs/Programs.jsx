@@ -9,8 +9,55 @@ import "../../styles/programs.css";
 import Reveal from "../../components/common/Reveal";
 import { images } from "../../assets";
 
+const FALLBACK_PROGRAMS = [
+  {
+    _id: "fallback-1",
+    category: "Ideation",
+    title: "Spark Bootcamp",
+    description:
+      "A 2-week intensive to validate your idea, map your market, and build your very first pitch.",
+    duration: "2 Weeks",
+    applicationLink: "",
+    image:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop",
+  },
+  {
+    _id: "fallback-2",
+    category: "Pre-Incubation",
+    title: "LaunchPad",
+    description:
+      "Move from prototype to MVP with structured mentorship, workshops, and access to a builder community.",
+    duration: "8 Weeks",
+    applicationLink: "",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop",
+  },
+  {
+    _id: "fallback-3",
+    category: "Incubation",
+    title: "TechNest Core",
+    description:
+      "Our flagship incubation track — funding pathways, dedicated mentors, and infrastructure to scale your startup.",
+    duration: "6 Months",
+    applicationLink: "",
+    image:
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&auto=format&fit=crop",
+  },
+  {
+    _id: "fallback-4",
+    category: "Growth",
+    title: "Founder Fellowship",
+    description:
+      "For post-revenue founders ready to raise capital, expand teams, and enter new markets with expert guidance.",
+    duration: "12 Months",
+    applicationLink: "",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop",
+  },
+];
+
 function Programs() {
-  const [programs, setPrograms] = useState([]);
+  const [programs, setPrograms] = useState(FALLBACK_PROGRAMS);
 
   useEffect(() => {
     const fetchPrograms = async () => {
@@ -19,9 +66,12 @@ function Programs() {
           "http://localhost:5000/api/programs"
         );
 
-        setPrograms(data.programs || []);
+        if (data.programs && data.programs.length > 0) {
+          setPrograms(data.programs);
+        }
       } catch (error) {
         console.log(error);
+        // keep fallback programs if API is unavailable
       }
     };
 
@@ -56,6 +106,7 @@ function Programs() {
                         : images.image3
                     }
                     alt={program.title}
+                    style={{ filter: "saturate(0.82) brightness(0.96) contrast(1.03)" }}
                   />
                 </div>
 
