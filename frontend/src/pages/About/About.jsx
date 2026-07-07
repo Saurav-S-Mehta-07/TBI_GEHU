@@ -42,7 +42,7 @@ const services = [
 ];
 
 const team = [
-  { initials: "AK", name: "Dr. Anil Kumar", role: "Director, TBI", org: "GEHU · Innovation Lead", tags: ["Leadership", "Policy", "Research"] },
+  { initials: "AK", name: "Dr. Anil Kumar", role: "Director, TBI", org: "GEHU · Innovation Lead", tags: ["Leadership", "Policy"] },
   { initials: "PS", name: "Prof. Priya Sharma", role: "Program Coordinator", org: "GEHU · Startup Ecosystem", tags: ["Incubation", "Mentorship"] },
   { initials: "RV", name: "Rahul Verma", role: "Startup Advisor", org: "Ex-Founder · Investor", tags: ["FinTech", "Fundraising"] },
   { initials: "NK", name: "Neha Kapoor", role: "Industry Relations", org: "TBI GEHU · Corporate Connect", tags: ["Partnerships", "BD"] },
