@@ -56,6 +56,24 @@ const FALLBACK_PROGRAMS = [
   },
 ];
 
+// Turns "Pre-Incubation" / "pre incubation" / "PRE_INCUBATION" into "pre-incubation"
+// so it matches the data-stage selectors in programs.css
+const toStageSlug = (category) => {
+  if (!category) return "";
+  return category
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_]+/g, "-");
+};
+
+// If category is missing/empty (e.g. bad data from the API), fall back to
+// a readable label instead of rendering a blank badge.
+const getCategoryLabel = (category) => {
+  const trimmed = category?.toString().trim();
+  return trimmed ? trimmed : "Program";
+};
+
 function Programs() {
   const [programs, setPrograms] = useState(FALLBACK_PROGRAMS);
 
@@ -90,12 +108,12 @@ function Programs() {
         <Reveal delay={150}>
           <div className="programs-grid">
             {programs.map((program) => (
-              <article
-                key={program._id}
-                className="program-card"
-              >
-                <span className="program-card__tag">
-                  {program.category}
+              <article key={program._id} className="program-card">
+                <span
+                  className="program-card__tag"
+                  data-stage={toStageSlug(program.category)}
+                >
+                  {getCategoryLabel(program.category)}
                 </span>
 
                 <div className="program-img">
