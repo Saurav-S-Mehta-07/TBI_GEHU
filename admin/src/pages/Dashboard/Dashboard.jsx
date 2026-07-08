@@ -1,7 +1,7 @@
 
 import "./dashboard.css";
 import { useState } from "react";
-
+import Contact from "../Contact/Contact"
 import Mentors from "../Mentors/Mentors";
 import Programs from "../Programs/Programs";
 import Events from "../Events/Events";
@@ -49,6 +49,13 @@ function Dashboard() {
         >
           Startups
         </button>
+        
+        <button
+          className={activeTab === "contact" ? "active" : ""}
+          onClick={() => setActiveTab("contact")}
+        >
+          Contact
+        </button>
 
         <button
           className="logout"
@@ -68,6 +75,7 @@ function Dashboard() {
             {activeTab === "programs" && "Programs Management"}
             {activeTab === "events" && "Events Management"}
             {activeTab === "startups" && "Startups Management"}
+            {activeTab === "contact" && "Contact Management"}
           </h3>
         </header>
 
@@ -76,6 +84,7 @@ function Dashboard() {
           {activeTab === "programs" && <Programs />}
           {activeTab === "events" && <Events />}
           {activeTab === "startups" && <Startups />}
+          {activeTab === "contact" && <Contact />}
         </div>
       </div>
     </div>
