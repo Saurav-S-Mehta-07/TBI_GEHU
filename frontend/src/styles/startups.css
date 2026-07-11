@@ -1,0 +1,93 @@
+.startups-page {
+  width: 100%;
+  background: whitesmoke;
+}
+
+.startups-section {
+  padding: 5rem 0;
+}
+
+.startups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Card */
+
+.startup-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.startup-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+/* Image */
+
+.startup-logo{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+}
+
+.startup-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
+}
+
+.startup-card:hover .startup-logo img{
+  transform:scale(1.08);
+}
+
+/* Content */
+
+.startup-card h3{
+  font-size:1.6rem;
+  font-weight:700;
+  color:#111;
+  margin:20px 22px 8px;
+}
+
+.startup-card p{
+  margin:0 22px 16px;
+  color:#666;
+  line-height:1.6;
+  font-size:1rem;
+}
+
+.startup-card span{
+  margin:0 22px 22px;
+  color:#EC1C24;
+  font-weight:600;
+  display:block;
+}
+
+/* Decorative line */
+
+.startup-card span::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:#EC1C24;
+  border-radius:20px;
+  margin-top:15px;
+}
+
+@media(max-width:768px){
+    .startups-grid{
+        grid-template-columns:1fr;
+    }
+}

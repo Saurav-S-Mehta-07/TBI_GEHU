@@ -1,0 +1,306 @@
+/* PAGE*/
+
+.startups-container {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+/* FORM */
+
+.startup-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+
+  background: #fff;
+  padding: 28px;
+  margin-bottom: 40px;
+
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.startup-form input {
+  height: 52px;
+  padding: 0 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  background: #fafafa;
+  color: #111827;
+
+  font-size: 15px;
+  outline: none;
+
+  transition: all .3s ease;
+}
+
+.startup-form input::placeholder {
+  color: #9ca3af;
+}
+
+.startup-form input:hover {
+  border-color: #9ca3af;
+}
+
+.startup-form input:focus {
+  background: #fff;
+  border-color: #EC1C24;
+  box-shadow: 0 0 0 4px rgba(236, 28, 36, 0.15);
+}
+
+/* BUTTON*/
+
+.startup-form button {
+  grid-column: 1 / -1;
+
+  height: 54px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #EC1C24;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.startup-form button:hover {
+  transform: translateY(-2px);
+  background: #d71920;
+  box-shadow: 0 12px 25px rgba(236, 28, 36, 0.25);
+}
+
+.startup-form button:active {
+  transform: scale(.98);
+}
+
+/* LIST */
+
+.startup-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* CARD*/
+
+.startup-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  transition: .35s;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.startup-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #EC1C24;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.startup-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 15px 18px 0;
+  padding: 10px 18px;
+
+  background: #EC1C24;
+  color: white;
+
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.startup-card a:hover {
+  background: #d71920;
+  box-shadow: 0 10px 20px rgba(236, 28, 36, 0.25);
+  transform: translateY(-2px);
+
+}
+
+.startup-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #EC1C24;
+
+  z-index: 1;
+}
+/* IMAGE*/
+
+.startup-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+
+  transition: transform .45s ease;
+}
+
+.startup-card:hover .startup-image {
+  transform: scale(1.05);
+}
+/* CONTENT*/
+
+.startup-card h3 {
+  margin: 18px 18px 10px;
+  color: #EC1C24;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.startup-card p {
+  margin: 6px 18px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ACTION BUTTONS */
+
+.startup-actions {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+}
+
+.startup-actions button {
+  flex: 1;
+  height: 42px;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-weight: 600;
+  transition: .3s;
+}
+
+.edit-btn {
+  background: #EC1C24;
+  color: white;
+  border: none;
+}
+
+.edit-btn:hover {
+  background: #d71920;
+}
+
+.delete-btn {
+  background: white;
+  color: #EC1C24;
+  border: 1px solid #EC1C24;
+}
+
+.delete-btn:hover {
+  background: #EC1C24;
+  color: white;
+}
+
+/* TABLET*/
+
+@media (max-width: 992px) {
+
+  .startups-container {
+    padding: 20px;
+  }
+
+  .startup-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .startup-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* MOBILE*/
+
+@media (max-width: 768px) {
+
+  .startup-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .startup-list {
+    grid-template-columns: 1fr;
+  }
+
+  .startup-image {
+    height: 220px;
+  }
+
+  .startup-actions {
+    flex-direction: column;
+  }
+
+  .startup-actions button {
+    width: 100%;
+  }
+
+}
+
+/* SMALL MOBILE*/
+
+@media (max-width: 480px) {
+
+  .startups-container {
+    padding: 15px;
+  }
+
+  .startup-form {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .startup-form input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .startup-form button {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .startup-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .startup-card p {
+    font-size: 14px;
+  }
+
+  .startup-image {
+    height: 180px;
+  }
+
+}

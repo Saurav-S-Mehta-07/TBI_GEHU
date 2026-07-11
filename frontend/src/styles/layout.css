@@ -1,0 +1,70 @@
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg-900);
+  color: var(--text-100);
+}
+
+.section-shell,
+.container-shell {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-block {
+  padding: 5rem 0;
+}
+
+.section-header {
+  max-width: 46rem;
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 0.75rem;
+  color: var(--text-100);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  margin-top: 0.8rem;
+  color: var(--text-400);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+}
+
+.card-surface-muted {
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 640px) {
+  .section-shell,
+  .container-shell {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell,
+  .container-shell {
+    padding: 0 2rem;
+  }
+}

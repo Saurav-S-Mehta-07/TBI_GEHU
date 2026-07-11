@@ -1,0 +1,162 @@
+/* programs.css */
+
+:root {
+  --red: #EC1C24;
+  --red-dark: #B3141A;
+  --red-tint: #FDEAEA;
+  --black: #0A0A0A;
+  --gray-900: #1A1A1A;
+  --gray-700: #4A4A4A;
+  --gray-500: #7A7A7A;
+  --gray-300: #D6D6D6;
+  --gray-100: #F4F4F4;
+  --white: #FFFFFF;
+}
+
+.programs-section {
+  padding: 100px 0 120px;
+  background: var(--white);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+
+.program-card {
+  border: 1px solid var(--gray-300);
+  border-radius: 14px;
+  padding: 24px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gray-300);
+  transition: background 0.25s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.program-card:hover::before {
+  background: var(--red);
+}
+
+/* Category tag / badge — default fallback style */
+.program-card__tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  background: var(--red-tint);
+  color: var(--red-dark);
+}
+
+/* All stage tags: same consistent style and color */
+.program-card__tag[data-stage="ideation"],
+.program-card__tag[data-stage="pre-incubation"],
+.program-card__tag[data-stage="incubation"],
+.program-card__tag[data-stage="fellowship"],
+.program-card__tag[data-stage="growth"] {
+  background: var(--red);
+  color: var(--white) !important;
+}
+
+.program-img {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--gray-100);
+}
+
+.program-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.program-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: var(--black);
+}
+
+.program-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--gray-700);
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.program-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 12.5px;
+}
+
+.program-card__duration {
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.program-card__link {
+  color: var(--red);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.program-card__link:hover {
+  gap: 9px;
+  color: var(--red-dark);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programs-section {
+    padding: 64px 0 80px;
+  }
+}
