@@ -10,7 +10,7 @@ function Contact() {
   const fetchContacts = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/contact",
+        "https://tbi-gehu.onrender.com/api/contact",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ function Contact() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/contact/${id}`,
+        `https://tbi-gehu.onrender.com/api/contact/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -81,7 +81,7 @@ function Programs() {
     const fetchPrograms = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/programs"
+          "https://tbi-gehu.onrender.com/api/programs"
         );
 
         if (data.programs && data.programs.length > 0) {

@@ -14,7 +14,7 @@ function Startups() {
   useEffect(() => {
     const fetchStartups = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/startups");
+        const { data } = await axios.get("https://tbi-gehu.onrender.com/api/startups");
 
         setStartups(data.startups || []);
       } catch (error) {

@@ -23,7 +23,7 @@ function Programs() {
   const fetchPrograms = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/programs"
+        "https://tbi-gehu.onrender.com/api/programs"
       );
 
       setPrograms(data.programs);
@@ -64,7 +64,7 @@ function Programs() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/programs",
+        "https://tbi-gehu.onrender.com/api/programs",
         form,
         {
           headers: {
@@ -85,7 +85,7 @@ function Programs() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/programs/${editId}`,
+        `https://tbi-gehu.onrender.com/api/programs/${editId}`,
         form,
         {
           headers: {
@@ -110,7 +110,7 @@ function Programs() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/programs/${id}`,
+        `https://tbi-gehu.onrender.com/api/programs/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

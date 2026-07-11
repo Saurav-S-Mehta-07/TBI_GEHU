@@ -22,7 +22,7 @@ function Events() {
   const fetchEvents = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/events"
+        "https://tbi-gehu.onrender.com/api/events"
       );
 
       setEvents(data.events);
@@ -62,7 +62,7 @@ function Events() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/events",
+        "https://tbi-gehu.onrender.com/api/events",
         form,
         {
           headers: {
@@ -83,7 +83,7 @@ function Events() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/events/${editId}`,
+        `https://tbi-gehu.onrender.com/api/events/${editId}`,
         form,
         {
           headers: {
@@ -108,7 +108,7 @@ function Events() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/events/${id}`,
+        `https://tbi-gehu.onrender.com/api/events/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
