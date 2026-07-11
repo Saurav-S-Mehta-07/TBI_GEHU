@@ -469,7 +469,7 @@ function Home() {
               Turn your idea into a venture.
             </h2>
 
-            <a href="https://tbi-gehu.vercel.app/contact">
+            <a href="/contact">
               Join TBI GEHU
             </a>
           </div>
