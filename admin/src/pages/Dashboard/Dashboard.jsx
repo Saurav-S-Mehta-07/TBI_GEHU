@@ -1,6 +1,7 @@
 
 import "./dashboard.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Contact from "../Contact/Contact"
 import Mentors from "../Mentors/Mentors";
 import Programs from "../Programs/Programs";
@@ -9,6 +10,7 @@ import Startups from "../Startups/Startups";
 
 function Dashboard() {
   const [activeTab, setActiveTab] = useState("mentors");
+   const navigate = useNavigate();
 
   return (
     <div className="dashboard-container">
