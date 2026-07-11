@@ -139,9 +139,9 @@ function Programs() {
 
                   {program.applicationLink ? (
                     <a
-                      href={program.applicationLink}
-                      target="_blank"
-                      rel="noreferrer"
+                      href="#"
+                      // target="_blank"
+                      // rel="noreferrer"
                       className="program-card__link"
                     >
                       Apply →
