@@ -1,0 +1,277 @@
+.events-container {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+/* FORM */
+.event-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+
+  background: #ffffff;
+  padding: 28px;
+  margin-bottom: 35px;
+
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.event-form input {
+  height: 52px;
+  padding: 0 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  background: #fafafa;
+  color: #111827;
+
+  font-size: 15px;
+  outline: none;
+
+  transition: .3s;
+}
+
+.event-form input::placeholder {
+  color: #9ca3af;
+}
+
+.event-form input:hover {
+  border-color: #9ca3af;
+}
+
+.event-form input:focus {
+  background: white;
+  border-color: #EC1C24;
+  box-shadow: 0 0 0 4px rgba(236, 28, 36, 0.15);
+}
+
+.event-form button {
+  grid-column: 1 / -1;
+
+  height: 54px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #EC1C24;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.event-form button:hover {
+  transform: translateY(-2px);
+  background: #d71920;
+  box-shadow: 0 12px 25px rgba(236, 28, 36, 0.25);
+}
+
+/* LIST */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.event-card {
+  position: relative;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: .35s;
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.06),
+    0 2px 8px rgba(0,0,0,.04);
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #EC1C24;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(236, 28, 36, .35);
+
+  box-shadow:
+    0 18px 35px rgba(0,0,0,.12),
+    0 8px 18px rgba(236, 28, 36, .12);
+}
+
+.event-card h3 {
+  margin: 18px 18px 10px;
+  color: #EC1C24;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.event-card p {
+  margin: 8px 18px;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* DELETE BUTTON */
+.event-card button {
+  margin: 18px;
+  width: calc(100% - 36px);
+  height: 44px;
+
+  border-radius: 10px;
+  border: 1px solid #EC1C24;
+  background: white;
+  color: #EC1C24;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: .3s;
+}
+ /* REGISTRATION BUTTON */
+
+.event-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 15px 18px 0;
+  padding: 14px 24px;
+
+  background: #EC1C24;
+  color: #fff;
+
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+
+  transition: all .3s ease;
+  cursor: pointer;
+
+  box-shadow: 0 8px 18px rgba(236, 28, 36, .25);
+}
+
+.event-card a:hover {
+  background: #d71920;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(236, 28, 36, .35);
+}
+
+.event-card a:active {
+  transform: scale(.97);
+}
+.event-card button:hover {
+  background: #ff3b3b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.event-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+
+  transition: transform .45s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+
+  .events-container {
+    padding: 20px;
+  }
+
+  .event-form {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 22px;
+  }
+
+  .event-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .event-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .event-list {
+    grid-template-columns: 1fr;
+  }
+
+  .event-image {
+    height: 220px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .events-container {
+    padding: 15px;
+  }
+
+  .event-form {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .event-form input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .event-form button {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .event-card {
+    border-radius: 16px;
+  }
+
+  .event-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .event-card p {
+    font-size: 14px;
+  }
+
+  .event-image {
+    height: 180px;
+  }
+
+}

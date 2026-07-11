@@ -1,0 +1,35 @@
+:root {
+  --font-sans: 'Inter', 'Segoe UI', sans-serif;
+  --font-display: 'Poppins', 'Segoe UI', sans-serif;
+
+  --bg-950: #050505;
+  --bg-900: #0a0a0a;
+  --bg-800: #111111;
+  --bg-700: #141414;
+  --surface: #141414;
+  --surface-2: #181818;
+  --surface-border: #2a2a2a;
+
+  --primary: #7a0019;
+  --primary-dark: #4d0011;
+  --accent: #ff4500;
+  --accent-alt: #ff6a2d;
+  --text-100: #ffffff;
+  --text-200: #e6e6e6;
+  --text-300: #d9d9d9;
+  --text-400: #b3b3b3;
+  --text-500: #7a7a7a;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.42);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --shadow-button: 0 12px 24px rgba(255, 69, 0, 0.22);
+
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.25s ease;
+}
