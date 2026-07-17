@@ -73,10 +73,10 @@ function Home() {
       try {
         const [programRes, eventRes, mentorRes, startupRes] =
           await Promise.all([
-            axios.get("http://localhost:5000/api/programs"),
-            axios.get("http://localhost:5000/api/events"),
-            axios.get("http://localhost:5000/api/mentors"),
-            axios.get("http://localhost:5000/api/startups"),
+            axios.get("https://tbi-gehu.onrender.com/api/programs"),
+            axios.get("https://tbi-gehu.onrender.com/api/events"),
+            axios.get("https://tbi-gehu.onrender.com/api/mentors"),
+            axios.get("https://tbi-gehu.onrender.com/api/startups"),
           ]);
 
         setPrograms(programRes.data.programs || []);

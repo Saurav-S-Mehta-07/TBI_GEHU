@@ -23,7 +23,7 @@ function Startups() {
   const fetchStartups = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/startups"
+        "https://tbi-gehu.onrender.com/api/startups"
       );
 
       setStartups(data.startups);
@@ -64,7 +64,7 @@ function Startups() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/startups",
+        "https://tbi-gehu.onrender.com/api/startups",
         form,
         {
           headers: {
@@ -85,7 +85,7 @@ function Startups() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/startups/${editId}`,
+        `https://tbi-gehu.onrender.com/api/startups/${editId}`,
         form,
         {
           headers: {
@@ -110,7 +110,7 @@ function Startups() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/startups/${id}`,
+        `https://tbi-gehu.onrender.com/api/startups/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

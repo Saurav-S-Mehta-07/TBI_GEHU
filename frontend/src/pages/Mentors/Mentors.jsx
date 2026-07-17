@@ -15,7 +15,7 @@ function Mentors() {
     const fetchMentors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/mentors"
+          "https://tbi-gehu.onrender.com/api/mentors"
         );
 
         setMentors(data.mentors || []);

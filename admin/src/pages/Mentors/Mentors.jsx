@@ -19,7 +19,7 @@ function Mentors() {
   const fetchMentors = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/mentors"
+        "https://tbi-gehu.onrender.com/api/mentors"
       );
 
       setMentors(data.mentors);
@@ -56,7 +56,7 @@ function Mentors() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/mentors",
+        "https://tbi-gehu.onrender.com/api/mentors",
         form,
         {
           headers: {
@@ -77,7 +77,7 @@ function Mentors() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/mentors/${editId}`,
+        `https://tbi-gehu.onrender.com/api/mentors/${editId}`,
         form,
         {
           headers: {
@@ -102,7 +102,7 @@ function Mentors() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/mentors/${id}`,
+        `https://tbi-gehu.onrender.com/api/mentors/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

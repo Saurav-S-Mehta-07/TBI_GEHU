@@ -11,7 +11,7 @@ function Navbar() {
     <header className="site-header">
       <nav className="container-shell site-nav">
         <Link to="/" className="brand-link" onClick={() => setIsOpen(false)}>
-          <div className="brand-mark">TBI</div>
+          <img src="/logo.png" alt="TBI GEHU Logo" className="brand-mark" />
           <div>
             <p className="brand-text">TBI GEHU</p>
             <p className="brand-subtitle">Technology Business Incubator</p>

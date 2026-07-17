@@ -15,7 +15,7 @@ function Events() {
     const fetchEvents = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/events"
+          "https://tbi-gehu.onrender.com/api/events"
         );
 
         setEvents(data.events || []);
